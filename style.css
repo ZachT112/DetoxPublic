@@ -1,1 +1,134 @@
-.nicotine_button,.nicotine_select{padding:15px;border-color:#235eab;border-width:2px;border-radius:30px}div#nicotine_calculator{width:500px;font-family:Assistant,sans-serif;font-size:16px;margin:auto;background-color:#e3e3e3;padding:20pt;text-align:center}div#nicotine_calculator h4{font-size:25px}.nicotine_select{width:275px;margin-top:15px}.nicotine_button{font-size:20px;font-weight:700;background-color:#fff}
+:root {
+    --outer-width: 500px; /* The width of the gray bounding box */
+    --inner-width: 275px; /* The inner width is the width of the product and usage selection boxes*/
+    --overhang-width: 50px; /* How much the email box should overhang */
+    --spacing: 15px; /* How much space should be between elements */
+    --padding: 30px; /* How much space should be between the edges of the gray box and the items inside */
+    --regular-font-size: 12pt; /* Font size used for most everything except for the button and title */
+    --large-font-size: 24pt; /* Font size used for the title */
+    --button-font-size: 18pt; /* Font size used for the button */
+    --background-color: #e3e3e3; /* Hex or color string. Used for the gray background box */
+    --primary-text-color: black; /* Hex or color string. Used for most text */
+    --secondary-text-color: white; /* Button text color and email box text color */
+    --disabled-text-color: #dfdfdf; /* Disabled button text color */
+    --primary-accent-color: #235eab; /* Enabled button color and email box color */
+    --disabled-accent-color: #033e8b; /* Disabled button color */
+    --smoothing-radius: 30px; /* Used for rounding corners */
+    --border-size: 2px; /* Border arround select boxes */
+    --popup-image-size: 300px; /* Width of the image in the popup */
+    --popup-width: 400px; /* The width of the popup box itself */
+}
+
+div#nicotine_calculator {
+    width: var(--outer-width);
+    font-family: 'Assistant', sans-serif;
+    font-size: var(--regular-font-size);
+    margin: auto;
+    background-color: var(--background-color);
+    padding: var(--spacing);
+    text-align: center;
+}
+
+div#nicotine_calculator h4 {
+    font-size: var(--large-font-size);
+}
+
+.nicotine_select {
+    width: var(--inner-width);
+    margin-top: var(--spacing);
+    padding: var(--spacing);
+    border-color: #235eab;
+    border-width: var(--border-size);
+    border-radius: var(--smoothing-radius);
+}
+
+.nicotine_button {
+    padding: var(--spacing);
+    font-size: var(--button-font-size);
+    font-weight: bold;
+    background-color: var(--primary-accent-color);
+    border-color: transparent;
+    color: var(--secondary-text-color);
+    border-radius: var(--smoothing-radius);
+    margin-left: var(--spacing);
+    margin-right: var(--spacing);
+}
+
+.nicotine_button:disabled {
+    background-color: #033e8b;
+    color: #dfdfdf;
+}
+
+#nicotine_email_submission {
+    margin-left: calc((var(--overhang-width) + var(--spacing)) * -1);
+    width: calc(var(--overhang-width) * 2 + var(--outer-width));
+    background-color: var(--primary-accent-color);
+    color: var(--secondary-text-color);
+    padding-left: var(--spacing);
+    padding-right: var(--spacing);
+    padding-top: calc(var(--spacing) * 2);
+    padding-bottom: 30px;
+    border-radius: 20px;
+}
+
+.nicotine_text_input {
+    width: 85%;
+    margin-top: calc(var(--spacing) * 2);
+    padding: var(--spacing);
+    border-radius: var(--smoothing-radius);
+    border-color: transparent;
+}
+
+#nicotine_popup_wrapper {
+    font-family: 'Assistant', sans-serif;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000000a0;
+}
+
+#nicotine_popup_wrapper.hidden {
+    display: none;
+}
+
+#nicotine_popup_content {
+    width: var(--popup-width);
+    padding: calc(var(--spacing) * 2);
+    background-color: white;
+    z-index: 2;
+    padding: var(--spacing);
+    border-radius: var(--smoothing-radius);
+    border-color: transparent;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nicotine_text_center {
+    text-align: center;
+}
+
+.nicotine_popup_image {
+    display: flex;
+    width: 300px;
+    margin: auto;
+}
+
+.right_align {
+    float: right;
+}
+
+div.nicotine_center * {
+    margin: auto;
+}
+
+.nicotine_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

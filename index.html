@@ -1,1 +1,42 @@
-<!doctypehtml><title>Example Nicotine Calculators</title><link href=./style.css rel=stylesheet><div id=nicotine_calculator onload=formLoaded()><form id=nicotine_calculator_form><h4>Nicotine Usage Calculator</h4><hr><br><label>Primary Product</label><br><select class=nicotine_select id=nicotine_product><option>Make a selection<option>Cigs<option>Dip<option>Cigarillos<option>Disposable Vapes</select><br><br><br><label>Daily Usage</label><br><select class=nicotine_select id=nicotine_usage><option>Make a selection</select><br><br><hr><br><button class=nicotine_button type=button>VIEW RESULTS</button></form><script src=./calculator.js></script></div>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example Nicotine Calculators</title>
+    <link rel='stylesheet' type='text/css' href='./style.css'>
+</head>
+
+<body>
+    <div id='nicotine_calculator' onload='formLoaded()'>
+        <form id='nicotine_calculator_form'>
+            <h4>Nicotine Usage Calculator</h4>
+            <hr>
+            <br>
+            <label>Primary Product</label>
+            <br>
+            <select id='nicotine_product' class='nicotine_select'>
+            </select>
+            <br><br>
+            <label>Daily Usage</label>
+            <br>
+            <select id='nicotine_usage' class='nicotine_select'>
+            </select>
+            <br><br><br>
+            <div id='nicotine_email_submission'>
+                <span>Your <b>email address</b> (optional) to receive coupons and specials from NicoClean</span>
+                <input class='nicotine_text_input' type='email' placeholder='Enter your email address'/>
+            </div>
+            <br><br>
+            <button id='nicotine_results_button' type='button' class='nicotine_button'>
+                VIEW RESULTS
+            </button>
+        </form>
+    </div>
+    <div id='nicotine_popup_wrapper' class='hidden'>
+        <div id='nicotine_popup_content'>
+        </div>
+    </div>
+    <script src='./calculator.js'></script>
+</body>
+
+</html>
